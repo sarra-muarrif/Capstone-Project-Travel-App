@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 25px auto 0;
+  padding: 16px 0;
+  background-color: $secondary-color;
+}
+.footer__social {
+  padding: 12px 0;
+  a {
+    padding-right: 12px;
+    color: $base-color;
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>travel planner</title>
+    <link
+      href="https://fonts.googleapis.com/css2?&family=Roboto:wght@300;500;700"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Truculenta&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>travel</h1>
+      <p>around the word</p>
+    </header>
+    <main>
+      <div class="container">
+        <section class="section-location">
+          <div class="title">
+            <p>plan your net wonderful trip with us</p>
+          </div>
+          <form id="form">
+            <div class="location-info">
+              <h2 for="current-location">current location</h2>
+              <input
+                id="current-location"
+                type="text"
+                name="input"
+                value=""
+                placeholder="From"
+              />
+              <h2 for="destination">Destination/city</h2>
+              <input
+                id="destination"
+                type="text"
+                name="input"
+                value=""
+                placeholder="To"
+              />
+            </div>
+            <div class="time-info">
+              <h2 for="departing-time">departing</h2>
+              <input id="departing-time" type="date" name="input" value="" />
+              <h2 for="returing">returing</h2>
+              <input
+                id="returing"
+                type="date"
+                name="input"
+                value=""
+                placeholder="From"
+              />
+            </div>
+            <button type="submit" class="search-btn">search</button>
+          </form>
+        </section>
+
+        <section class="section-result">
+          <div class="container result">
+            <div class="result__img">
+              <img id="city_img" />
+            </div>
+            <div class="result__content">
+              <h2 class="city__name">
+                <i class="fas fa-map-marked-alt"></i>
+                You are going to:<span id="city_name"></span>
+              </h2>
+              <h2 class="departing">
+                <i class="fas fa-plane-departure"></i>
+                Departing on :<span id="departingTime"></span>
+              </h2>
+              <h2 class="returing">
+                <i class="far fa-calendar-alt"></i> Returing on :<span
+                  id="returingTime"
+                ></span>
+              </h2>
+              <h2 class="weather">
+                <i class="fas fa-temperature-low"></i>
+                Expect weather to be :
+                <div id="temp"></div>
+                <div id="description"></div>
+              </h2>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="footer__site-info">
+          <nav class="footer__social">
+            <a href="#" class="social__item"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social__item"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social__item"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="social__item"
+              ><i class="fab fa-pinterest"></i
+            ></a>
+            <a href="#" class="social__item"><i class="fab fa-github"></i></a>
+          </nav>
+          <div class="footer__copyright">
+            sarra muarrif &copy; - 2021 Powered by
+            <a href="https://www.udacity.com/" target="_blank">Udacity</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
