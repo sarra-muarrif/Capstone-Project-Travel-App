@@ -2,30 +2,21 @@ $base-color: #14213d;
 $secondary-color: #e5e5e5;
 $hight-color: #540b0e;
 
-// @mixin font-style ($size,$color){
-//   font-size: $size;
-//   color: $color;
-//   font-family: "Truculenta", sans-serif;
-// }
-// *{
-
-// }
 body {
-  // max-width: 90%;
   margin: 0 auto;
   background-image: url("../media/travel-background-icons.jpg");
 }
 main {
   display: flex;
   justify-content: center;
-  // width: 80%;
 }
 .title {
   font-size: 2rem;
   color: $base-color;
   font-family: "Truculenta", sans-serif;
 }
-.section-location,.section-result {
+.section-location,
+.section-result {
   padding: 12px 20px;
   margin: 12px auto;
   border: 1px solid $hight-color;
@@ -35,4 +26,13 @@ main {
   font-size: 1.5rem;
   color: $base-color;
   font-family: "Truculenta", sans-serif;
+}
+.section-result{
+  display: none;
+}
+.result__img {
+  text-align: center;
+  img {
+    width: 30%;
+  }
 }

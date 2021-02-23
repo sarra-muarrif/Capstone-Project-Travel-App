@@ -2,14 +2,11 @@ import fetch from "node-fetch";
 
 /* Declare your API credentials */
 const GEONAMES_URL = "http://api.geonames.org/searchJSON";
-// const GEONAMES_API_KEY = process.env.GEONAMES_API_KEY;
-const GEONAMES_API_KEY = "sarra";
+const GEONAMES_API_KEY = "  " //<< Enter Your API Here
 const WEATHERBIT_FORCAST_URL = "https://api.weatherbit.io/v2.0/forecast/daily";
-// const WEATHERBIT_API_KEY = process.env.WEATHERBIT_API_KEY;
-const WEATHERBIT_API_KEY = "e77f3a905d2a4f55ae18d2168074848e";
+const WEATHERBIT_API_KEY = " " ;   //<< Enter Your API Here
 const PIXALABAY_API_URL = "https://pixabay.com/api/"
-// const PIXALABAY_API_KEY = process.env.PIXALABAY_API_KEY;
-const PIXALABAY_API_KEY = "20310833-4d8070e75a1507d44bb697092";
+const PIXALABAY_API_KEY = " "; //<< Enter Your API Here
 
 //Function getCityInfo to get city information from Geonames API (latitude, longitude)
 const getCityInfo = async (destinationCity) => {
@@ -19,7 +16,6 @@ const getCityInfo = async (destinationCity) => {
     const response = await fetch(CityInfo_URL);
     try {
         const cityData = await response.json();
-        // console.log(cityData, "city data")
         return cityData;
     } catch (error) {
         console.log(error)
@@ -33,7 +29,6 @@ const getWetherInfo = async (city_lattitude, city_longitude) => {
     const response = await fetch(weatherInfo_URL);
     try {
         const weatherData = await response.json();
-        // console.log(weatherData, "weather Data")
         return weatherData;
     } catch (error) {
         console.log(error)
@@ -47,12 +42,11 @@ const getCityImg = async (city) => {
     const response = await fetch(cityImg_URL);
     try {
         const cityImg = await response.json();
-        console.log(cityImg, "cityImg")
         return cityImg;
     } catch (error) {
         console.log(error)
     }
 };
 
-
+// Export All Function 
 export { getCityInfo, getWetherInfo, getCityImg }

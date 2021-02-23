@@ -6,13 +6,10 @@ const express = require('express')
 const app = express()
 
 /* Dependencies */
-const dotenv = require('dotenv')
 const path = require('path')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 // const mockAPIResponse = require('./mockAPI.js')
-
-dotenv.config()
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.json())
@@ -25,8 +22,7 @@ app.use(cors())
 // Initialize the main project folder
 app.use(express.static('dist'))
 
-//Defind array
-let projectData = []
+let trip_User_data = []
 
 app.get('/', function (req, res) {
   // res.sendFile('dist/index.html') 
@@ -43,9 +39,9 @@ app.post('/trip', (req, res) => {
     temp: req.body.temp,
     description: req.body.description,
   };
-  projectData.push(tripData)
-  res.send(projectData)
-  console.log(projectData, "project Data")
+  trip_User_data.push(tripData)
+  res.send(trip_User_data)
+  console.log(trip_User_data, "project Data")
 })
 
 

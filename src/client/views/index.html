@@ -25,26 +25,20 @@
   </head>
 
   <body>
+    <!-- Header -->
     <header>
       <h1>travel</h1>
       <p>around the word</p>
     </header>
     <main>
       <div class="container">
+        <!-- Section Planner -->
         <section class="section-location">
           <div class="title">
             <p>plan your net wonderful trip with us</p>
           </div>
           <form id="form">
             <div class="location-info">
-              <h2 for="current-location">current location</h2>
-              <input
-                id="current-location"
-                type="text"
-                name="input"
-                value=""
-                placeholder="From"
-              />
               <h2 for="destination">Destination/city</h2>
               <input
                 id="destination"
@@ -69,7 +63,7 @@
             <button type="submit" class="search-btn">search</button>
           </form>
         </section>
-
+        <!-- Section Result -->
         <section class="section-result">
           <div class="container result">
             <div class="result__img">
@@ -78,29 +72,27 @@
             <div class="result__content">
               <h2 class="city__name">
                 <i class="fas fa-map-marked-alt"></i>
-                You are going to:<span id="city_name"></span>
+                <span id="country_code"></span><span id="city_name"></span>
               </h2>
               <h2 class="departing">
                 <i class="fas fa-plane-departure"></i>
-                Departing on :<span id="departingTime"></span>
+                <span id="departingTime"></span>
               </h2>
               <h2 class="returing">
-                <i class="far fa-calendar-alt"></i> Returing on :<span
-                  id="returingTime"
-                ></span>
+                <i class="far fa-calendar-alt"></i
+                ><span id="returingTime"></span>
               </h2>
               <h2 class="weather">
                 <i class="fas fa-temperature-low"></i>
-                Expect weather to be :
-                <div id="temp"></div>
-                <div id="description"></div>
+                <span id="temp"></span>
+                <span id="description"></span>
               </h2>
             </div>
           </div>
         </section>
       </div>
     </main>
-
+    <!-- Footer -->
     <footer id="footer">
       <div class="container">
         <div class="footer__site-info">
@@ -122,5 +114,15 @@
         </div>
       </div>
     </footer>
+    <!-- Service Workers -->
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </body>
 </html>
