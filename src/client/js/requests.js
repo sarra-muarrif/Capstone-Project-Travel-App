@@ -2,11 +2,11 @@ import fetch from "node-fetch";
 
 /* Declare your API credentials */
 const GEONAMES_URL = "http://api.geonames.org/searchJSON";
-const GEONAMES_API_KEY = "  " //<< Enter Your API Here
+const GEONAMES_API_KEY=sarra; 
 const WEATHERBIT_FORCAST_URL = "https://api.weatherbit.io/v2.0/forecast/daily";
-const WEATHERBIT_API_KEY = " " ;   //<< Enter Your API Here
+const WEATHERBIT_API_KEY="e77f3a905d2a4f55ae18d2168074848e";
 const PIXALABAY_API_URL = "https://pixabay.com/api/"
-const PIXALABAY_API_KEY = " "; //<< Enter Your API Here
+const PIXABAY_IMAGE_API_KEY="20310833-4d8070e75a1507d44bb697092"
 
 //Function getCityInfo to get city information from Geonames API (latitude, longitude)
 const getCityInfo = async (destinationCity) => {
