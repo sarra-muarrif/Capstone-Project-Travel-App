@@ -22,7 +22,7 @@ app.use(cors())
 // Initialize the main project folder
 app.use(express.static('dist'))
 
-let trip_User_data = []
+let user_trip_data = []
 
 app.get('/', function (req, res) {
   // res.sendFile('dist/index.html') 
@@ -38,15 +38,16 @@ app.post('/trip', (req, res) => {
     country_code: req.body.country_code,
     temp: req.body.temp,
     description: req.body.description,
+    duration: req.body.duration
   };
-  trip_User_data.push(tripData)
-  res.send(trip_User_data)
-  console.log(trip_User_data, "project Data")
+  user_trip_data.push(tripData)
+  res.send(user_trip_data)
+  console.log(user_trip_data, "user_trip_data")
 })
 
 
 // Setup Server
-const port = 8081;
+const port = 5000;
 
 // designates what port the app will listen to for incoming requests
 app.listen(port, (error) => {
