@@ -4,7 +4,6 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mockAPIResponse = require("./mockAPI.js");
 
 // Start up an instance of app
 const app = express();
@@ -55,3 +54,8 @@ app.listen(PORT, (error) => {
   if (error) throw new Error(error);
   console.log("Server listening on port ", `${PORT}`);
 });
+
+
+export { 
+  app
+}

@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { getCityInfo, getWetherInfo, getCityImg } from "./requests";
 
-function getDuration(date1, date2) {
+export function getDuration(date1, date2) {
   const diffTime = Math.abs(new Date(date2) - new Date(date1));
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
@@ -91,7 +91,7 @@ const updateUI = async (userData) => {
     "departingTime"
   ).innerHTML = `Departing on :${departingTime}`;
   document.getElementById(
-    "returningTime"
+    "returning-time"
   ).innerHTML = `Returning on :${returningTime}`;
   document.getElementById("temp").innerHTML = `Expect weather to be :${temp}`;
   document.getElementById("description").innerHTML = `${description}`;
@@ -100,8 +100,10 @@ const updateUI = async (userData) => {
   ).innerHTML = `This is ${duration} days`;
 };
 
-//Event listener to add function to existing HTML DOM element
-document.querySelector(".search-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  handleSearch();
+document.addEventListener("DOMContentLoaded", function () {
+  //Event listener to add function to existing HTML DOM element
+  document.querySelector(".search-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    handleSearch();
+  });
 });

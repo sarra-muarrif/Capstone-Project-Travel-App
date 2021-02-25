@@ -12,7 +12,7 @@ module.exports = {
     },
     mode: 'development',
     devtool: 'source-map',
-    stats: 'verbose',
+    stats: 'minimal',
     module: {
         rules: [
             {
