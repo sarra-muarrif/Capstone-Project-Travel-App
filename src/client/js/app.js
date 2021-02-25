@@ -10,6 +10,7 @@ export const handleSearch = async () => {
   // Get user values
   const destinationCity = document.getElementById("destination").value;
   const departingTime = document.getElementById("departing-time").value;
+  console.log(departingTime, "departingTime")
   const returningTime = document.getElementById("returning-time").value;
   // Calculate The Duration
   const duration = getDuration(departingTime, returningTime);
@@ -34,6 +35,7 @@ export const handleSearch = async () => {
         description,
         duration,
       });
+      console.log("userData", userData)
       return userData;
     })
     .then((userData) => {
@@ -88,10 +90,10 @@ const updateUI = async (userData) => {
   ).innerHTML = ` You are going to:${city_name}`;
   document.getElementById("country_code").innerHTML = `${country_code}`;
   document.getElementById(
-    "departingTime"
+    "departing__time"
   ).innerHTML = `Departing on :${departingTime}`;
   document.getElementById(
-    "returning-time"
+    "returing__time"
   ).innerHTML = `Returning on :${returningTime}`;
   document.getElementById("temp").innerHTML = `Expect weather to be :${temp}`;
   document.getElementById("description").innerHTML = `${description}`;
