@@ -22,10 +22,10 @@ app.use(cors())
 // Initialize the main project folder
 app.use(express.static('dist'))
 
-let user_trip_data = []
+let user_trip_data = {}
 
 app.get('/', function (req, res) {
-  // res.sendFile('dist/index.html') 
+
   res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
@@ -40,7 +40,7 @@ app.post('/trip', (req, res) => {
     description: req.body.description,
     duration: req.body.duration
   };
-  user_trip_data.push(tripData)
+  user_trip_data = (tripData)
   res.send(user_trip_data)
   console.log(user_trip_data, "user_trip_data")
 })

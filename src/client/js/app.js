@@ -71,7 +71,7 @@ const postData = async (url = '', data = {}) => {
 
 // Function update UI that reveals the results page with updated trip information including fetched image of the destination
 const updateUI = async (userData) => {
-    const { departingTime, returingTime, city_name, temp, country_code, description, duration } = userData[0]
+    const { departingTime, returingTime, city_name, temp, country_code, description, duration } = userData
     const img = await getCityImg(city_name)
     console.log(img, "image")
     const { largeImageURL } = img.hits[0];
@@ -83,8 +83,10 @@ const updateUI = async (userData) => {
     document.getElementById("returingTime").innerHTML = `Returing on :${returingTime}`;
     document.getElementById("temp").innerHTML = `Expect weather to be :${temp}`;
     document.getElementById("description").innerHTML = `${description}`;
-    document.getElementById("durationTime").innerHTML = `Tis is ${duration} days`;
+    document.getElementById("durationTime").innerHTML = `This is ${duration} days`;
 }
+
+
 
 //Event listener to add function to exisiting HTML DOM element
 document.querySelector(".search-btn").addEventListener("click", handleSearch)

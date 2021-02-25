@@ -14,10 +14,8 @@ const getCityInfo = async (destinationCity) => {
     // http://api.geonames.org/searchJSON?q={goingTOLocation}&username={GEONAMES_API_KEY}
     const CityInfo_URL = `${GEONAMES_URL}?q=${destinationCity}&username=${GEONAMES_API_KEY}`
     const response = await fetch(CityInfo_URL);
-    console.log(response, "cityData")
     try {
         const cityData = await response.json();
-        console.log(cityData, "city Data")
         return cityData;
     } catch (error) {
         console.log(error)
@@ -33,7 +31,6 @@ const getWetherInfo = async (city_lattitude, city_longitude) => {
 
     try {
         const weatherData = await response.json();
-        console.log(weatherData, "weatherData")
         return weatherData;
     } catch (error) {
         console.log(error)
@@ -47,7 +44,6 @@ const getCityImg = async (city) => {
     const response = await fetch(cityImg_URL);
     try {
         const cityImg = await response.json();
-        console.log(cityImg, "city_image")
         return cityImg;
     } catch (error) {
         console.log(error)
