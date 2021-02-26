@@ -1,25 +1,35 @@
 .location-info,
 .time-info {
-  padding: 12px 20px;
+  padding: 15px 20px;
+  font-size: 2.5rem;
 }
 h2 {
-  line-height: 30px;
+  line-height: 35px;
 }
 input {
-  padding: 5px 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px 20px;
   color: $base-color;
   border: 2px solid $hight-color;
   border-radius: 10px;
   font-family: "Truculenta", sans-serif;
   width: 100%;
-  margin: 10px auto;
+  margin: 12px auto;
 }
 .search-btn {
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 20px;
   border-radius: 10px;
+  margin: 12px auto;
   background: $base-color;
-  font-size: 16px;
+  font-size: 2rem;
   color: $secondary-color;
   border: none;
+  cursor: pointer;
 }
+.search-btn:active{
+  color: brown;
+  background-color: blanchedalmond;
+}
+

@@ -2,9 +2,10 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 25px auto 0;
-  padding: 16px 0;
+  margin: 25px auto ;
+  padding: 26px 0;
   background-color: $secondary-color;
+  font-size: 2rem;
 }
 .footer__social {
   padding: 12px 0;

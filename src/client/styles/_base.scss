@@ -2,6 +2,9 @@ $base-color: #14213d;
 $secondary-color: #e5e5e5;
 $hight-color: #540b0e;
 
+a {
+  text-decoration: none;
+}
 body {
   margin: 0 auto;
   background-image: url("../media/travel-background-icons.jpg");
@@ -10,14 +13,14 @@ main {
   padding: 12px;
 }
 .title {
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: $base-color;
   font-family: "Truculenta", sans-serif;
 }
 .section-location,
 .section-result {
-  padding: 12px 20px;
-  margin: 20px 0;
+  padding: 10px 20px;
+  margin: 10px 0;
   border: 1px solid $hight-color;
   border-radius: 10px;
   background: #fff;
@@ -34,4 +37,8 @@ main {
   img {
     width: 30%;
   }
+}
+.fas,
+.far {
+  padding-right: 40px;
 }
