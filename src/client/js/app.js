@@ -1,47 +1,59 @@
 import fetch from "node-fetch";
 import { getCityInfo, getWetherInfo, getCityImg } from "./requests";
 
+// Calculate The Duration
 export function getDuration(date1, date2) {
   const diffTime = Math.abs(new Date(date2) - new Date(date1));
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+}
+
+// Check If Input Is Not Empity
+export function isInputValid(destination, departing, returning) {
+  if (destination == "" || departing == "" || returning == "") {
+    alert("Some inputs are missing , please try again");
+    return false;
+  }
+  return true;
 }
 
 export const handleSearch = async () => {
   // Get user values
   const destinationCity = document.getElementById("destination").value;
   const departingTime = document.getElementById("departing-time").value;
-  console.log(departingTime, "departingTime")
   const returningTime = document.getElementById("returning-time").value;
-  // Calculate The Duration
-  const duration = getDuration(departingTime, returningTime);
-  // Get Information for target city
-  getCityInfo(destinationCity)
-    .then((cityData) => {
-      const { lng, lat } = cityData.geonames[0];
-      //Call getWetherInfo Function to get Data of Weather
-      return getWetherInfo(lat, lng);
-    })
-    .then((weatherData) => {
-      const { city_name, country_code } = weatherData;
-      const { temp } = weatherData.data[0];
-      const { description } = weatherData.data[0].weather;
-      //Call postData Function to Post Data to local server
-      const userData = postData("http://localhost:5000/trip", {
-        departingTime,
-        returningTime,
-        city_name,
-        country_code,
-        temp,
-        description,
-        duration,
+  // Check The Input
+  if (isInputValid(destinationCity, departingTime, returningTime)) {
+    // Calculate The Duration
+    const duration = getDuration(departingTime, returningTime);
+    // Get Information for target city
+    getCityInfo(destinationCity)
+      .then((cityData) => {
+        const { lng, lat } = cityData.geonames[0];
+        // Get Data of Weather
+        return getWetherInfo(lat, lng);
+      })
+      .then((weatherData) => {
+        const { city_name, country_code } = weatherData;
+        const { temp } = weatherData.data[0];
+        const { description } = weatherData.data[0].weather;
+        // Post Data to local server
+        const userData = postData("http://localhost:5000/trip", {
+          departingTime,
+          returningTime,
+          city_name,
+          country_code,
+          temp,
+          description,
+          duration,
+        });
+        console.log("userData", userData);
+        return userData;
+      })
+      .then((userData) => {
+        //Call updateUI Function to Display User Trip
+        updateUI(userData);
       });
-      console.log("userData", userData)
-      return userData;
-    })
-    .then((userData) => {
-      //Call updateUI Function to Display User Trip
-      updateUI(userData);
-    });
+  }
 };
 
 // Function postData to POST data to our local server
